@@ -36,9 +36,10 @@ h6 {
 }
 
 :root {
-  --primary: #5cb874;
-  --secondary: #272443;
-  --header: #fbfbfb;
+  --primary: #fff;
+  --semigray: #fbfbfb;
+  --secondary: #5cb874;
+  --header: #4A4A4A;
   --white: #ffffff;
   --gray: #444444;
   --fill: #f5f5f5;
@@ -48,6 +49,7 @@ h6 {
   --contacth4: #222222;
   --font-sans: "Open Sans", sans-serif;
   --linked: #086bc9;
+  --blue: #272443;
 }
 
 /*--------------------------------------------------------------
@@ -103,21 +105,20 @@ h6 {
   background: var(--header);
   font-size: 15px;
   height: 40px;
-  padding: 0;
+  padding: 0;  
+  color: var(--white);
 }
 
 #topbar .contact-info a {
   line-height: 0;
-  color: var(--gray);
   transition: 0.3s;
 }
 
 #topbar .contact-info a:hover {
-  color: var(--primary);
+  color: var(--white);
 }
 
 #topbar .contact-info i {
-  color: var(--primary);
   line-height: 0;
   margin-right: 5px;
 }
@@ -127,7 +128,6 @@ h6 {
 }
 
 #topbar .social-links a {
-  color: #6f6f6f;
   padding: 4px 12px;
   display: inline-block;
   line-height: 1px;
@@ -150,7 +150,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: var(--secondary);
+  background: var(--primary);
   transition: all 0.5s;
   z-index: 997;
   height: 70px;
@@ -211,9 +211,10 @@ h6 {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-size: 15px;
-  color: var(--white);
+  color: var(--gray);
   white-space: nowrap;
   transition: 0.3s;
+  font-weight: 600;
 }
 
 .navbar a i,
@@ -228,18 +229,18 @@ h6 {
 .navbar .active:focus,
 .navbar li:hover > a {
   color: var(--secondary);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .navbar .getstarted,
 .calltoaction,
 .navbar .getstarted:focus,
 .calltoaction:focus {
-  color: var(--primary);
+  color: var(--secondary);
   padding: 8px 25px;
   margin-left: 30px;
   border-radius: 4px;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   transition: 0.3s;
   font-size: 14px;
 }
@@ -251,7 +252,6 @@ h6 {
   background: var(--primary);
   color: var(--white);
 }
-
 .navbar .dropdown-menu {
   display: none;
 }
@@ -272,8 +272,7 @@ h6 {
 }
 
 .navbar .nav-item.dropdown:hover > a {
-  color: var(--active);
-  /* Change color of the About link on hover if needed */
+  color: var(--active); /* Change color of the About link on hover if needed */
 }
 
 @media (max-width: 1366px) {
@@ -395,6 +394,10 @@ h6 {
   display: block;
 }
 
+.fixed-top{
+  border: 2px solid var(--secondary);
+}
+
 .button {
   --color: #00a97f;
   padding: 0.8em 1.7em;
@@ -458,7 +461,7 @@ h6 {
 #hero {
   width: 100%;
   height: 70vh;
-  background-color: rgba(9, 9, 9, 0.8);
+  /*background-color: rgba(9, 9, 9, 0.8);*/
   overflow: hidden;
   position: relative;
 }
@@ -479,7 +482,7 @@ h6 {
 
 #hero .carousel-item::before {
   content: "";
-  background-color: rgba(39, 36, 67, 0.8);
+  /* background-color: rgba(39, 36, 67, 0.8); */
 }
 
 #hero .carousel-container {
@@ -672,7 +675,7 @@ h6 {
 }
 
 #hero h2 {
-  color: var(--white);
+  color: var(--gray);
   margin-bottom: 10px;
   font-size: 48px;
   font-weight: 700;
@@ -684,7 +687,7 @@ h6 {
   animation-delay: 0.4s;
   margin-left: 5px;
   margin-right: 40%;
-  color: var(--white);
+  color: var(--gray);
 }
 
 #hero .carousel-inner .carousel-item {
@@ -1034,96 +1037,6 @@ h6 {
   }
 }
 
-.obj {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  /* background-color: rgb(96, 96, 232); */
-  transform-style: preserve-3d;
-  transition: 0.5s all;
-  transform: rotateX(-25deg) rotateY(20deg);
-}
-
-.objchild {
-  animation: rotate 4s infinite linear;
-  transform-style: preserve-3d;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  /* background:linear-gradient( to top,rgb(11, 11, 102),rgb(96, 96, 232) ) ; */
-}
-
-.objchild::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  /* background: rgb(37, 101, 230); */
-  /* background: radial-gradient(center center, farthest-side , #9993, transparent); */
-  filter: blur(20px);
-  box-shadow: 0 0 200px 15px white;
-  transform: rotateX(90deg) scale(1.1) translateZ(-120px);
-}
-
-.inn1 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  filter: blur(2px);
-  transform: translateZ(-100px);
-  background: linear-gradient(to top, rgb(11, 11, 102), rgb(96, 96, 232));
-}
-
-.inn2 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: translateZ(100px);
-  background: linear-gradient(to top, rgb(11, 11, 102), rgb(96, 96, 232));
-}
-
-.inn3 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: translateX(-100px) rotateY(90deg);
-  background: linear-gradient(to top, rgb(11, 11, 102), rgb(96, 96, 232));
-}
-
-.inn4 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: translateX(100px) rotateY(90deg);
-  background: linear-gradient(to top, rgb(10, 10, 78), rgb(96, 96, 232));
-}
-
-.inn5 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgb(10, 10, 79);
-  transform: rotateX(90deg) translateZ(-100px);
-}
-
-.inn6 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgb(46, 46, 46);
-  transform: rotateX(90deg) translateZ(100px);
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate3d(0, 1, 0, 0deg);
-  }
-
-  100% {
-    transform: rotate3d(0, 1, 0, 360deg);
-  }
-}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -1557,7 +1470,7 @@ section {
 }
 
 .featured-services {
-  background-color: var(--fill);
+  background-color: var(--primary);
 }
 
 .featured-services .icon {
@@ -2128,9 +2041,17 @@ button:hover .button-text {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-#contact {
-  background: linear-gradient(rgb(0, 93, 145, 0.8), var(--secondary)),
-    url(./../img/contact-us.jpg);
+#contact{  
+  background: linear-gradient(rgba(39, 36, 67, 0.8), rgba(39, 36, 67, 0.5)), url(./../img/contact-us.jpg);
+}
+.contact .info {
+  border-top: 3px solid var(--primary);
+  border-bottom: 3px solid var(--primary);
+  background:var(--white);
+  padding: 30px;
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+
 }
 
 .contact .info {
@@ -2310,7 +2231,7 @@ button:hover .button-text {
 --------------------------------------------------------------*/
 
 #footer {
-  background: linear-gradient(var(--secondary), rgba(0, 93, 145, 0.8));
+ background: #191F35;
   padding: 20px 0;
 }
 
